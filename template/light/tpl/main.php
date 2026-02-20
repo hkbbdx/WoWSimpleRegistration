@@ -169,12 +169,6 @@ require_once 'header.php'; ?>
                                                                        name="account">
                                                             </div>
                                                         <?php } ?>
-                                                        <div class="input-group" style="margin-top: 10px;">
-                                                            <span class="input-group">Имя персонажа (опционально)</span>
-                                                            <input type="text" class="form-control"
-                                                                   placeholder="Имя персонажа для проверки голоса"
-                                                                   name="character_name">
-                                                        </div>
                                                         <div class="text-center" style="margin-top: 10px;">
                                                             <?php
                                                             $vote_sites = get_config('vote_sites');
