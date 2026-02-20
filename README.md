@@ -82,7 +82,7 @@ Here’s how to enable debug mode:
 
 ## ✅ Features
 
-1. **Registration Page**: Accommodating a wide range of game versions including Vanilla, TBC, WotLK, MoP, WoD, Legion, BFA, and TWW.
+1. **Registration Page**: Accommodating a wide range of game versions, including Vanilla, TBC, WotLK, MoP, WoD, Legion, BFA, and TWW.
 2. **Online Players Status**: Check who's online on the server, with support for multiple realms.
 3. **Leaderboards**: Display top players based on Playtime, Kills, Honor Points, Arena Points, and Arena Teams across different realms.
 4. **Connection Guide**: Step-by-step ‘How to connect’ page for new players.
@@ -110,7 +110,6 @@ Here’s how to enable debug mode:
 
 ### 2.0.4 (2/20/2026)
 
-- Added MMORating.top voting site integration with API verification support. See [mmorating.md](mmorating.md) for setup instructions.
 - Added Cloudflare Turnstile captcha support (captcha_type = 3).
 
 ### 2.0.3 (11/12/2024)
@@ -206,6 +205,17 @@ Looking for more visuals? [Browse additional screenshots here.](https://github.c
 ### 🧑‍💻 Programming
 
 - **Lead Developer**: [Amin.MasterkinG](https://masterking32.com)
+
+**Contributors:**
+- [Phentora](https://github.com/Phentora)
+- [imsamdez](https://github.com/imsamdez)
+- [rescr1pt](https://github.com/rescr1pt)
+- [masoudr](https://github.com/masoudr)
+- [jkcgs](https://github.com/jkcgs)
+- [funjoker](https://github.com/funjoker)
+- [eshamwatajevian](https://github.com/eshamwatajevian)
+- [den13501](https://github.com/den13501)
+- [PowerpuffIO](https://github.com/PowerpuffIO)
 
 ### 🫂 Translations
 
