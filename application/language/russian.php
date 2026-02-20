@@ -118,4 +118,5 @@ $language['you_already_voted'] = 'Вы уже голосовали на этом
 $language['captcha_not_valid'] = 'Неверный код.';
 $language['hcaptcha_not_valid'] = 'Проверка HCaptcha не пройдена.';
 $language['recaptcha_not_valid'] = 'Проверка ReCaptcha не пройдена.';
+$language['turnstile_not_valid'] = 'Проверка Cloudflare Turnstile не пройдена.';
 $language['captcha_required'] = 'Проверка не пройдена.';

@@ -90,7 +90,7 @@ Here’s how to enable debug mode:
 6. **Multiple Themes**: Choose from various templates such as Light, Icecrown, Kaelthas, Advance, and Battle for Azeroth.
 7. **Password Management**: Facilities to change (as of April 10, 2019) and recover passwords (as of May 31, 2019).
 8. **Vote System**: Engage your community with a voting system (added on April 3, 2020).
-9. **Captcha Integration**: Protect your site with HCaptcha/Recaptcha v2 (since July 27, 2020).
+9. **Captcha Integration**: Protect your site with HCaptcha/Recaptcha v2/Cloudflare Turnstile (since July 27, 2020).
 10. **Two-Factor Authentication (2FA)**: Add an extra layer of security with 2FA (introduced on July 28, 2020).
 11. **Multilingual Support**: Making the site accessible to a global audience with support for various languages (added on September 10, 2020), including:
     - 🇬🇧 English
@@ -111,6 +111,7 @@ Here’s how to enable debug mode:
 ### 2.0.4 (2/20/2026)
 
 - Added MMORating.top voting site integration with API verification support. See [mmorating.md](mmorating.md) for setup instructions.
+- Added Cloudflare Turnstile captcha support (captcha_type = 3).
 
 ### 2.0.3 (11/12/2024)
 

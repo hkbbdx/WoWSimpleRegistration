@@ -123,10 +123,10 @@ $config['mmorating_api_key'] = ''; // Your API key from mmorating.top (starts wi
 $config['mmorating_api_url'] = 'https://mmorating.top/api/v1/vote/check-flexible'; // API endpoint for vote verification
 
 // Captcha Configuration - Choose the type of captcha to use for security purposes.
-$config['captcha_type'] = 0; // Options: 0 (Image Captcha), 1 (HCaptcha), 2 (ReCaptcha v2), or >2 (Disable captcha).
-$config['captcha_key'] = ''; // The key for HCaptcha or Recaptcha. Leave empty for image captcha.
-$config['captcha_secret'] = ''; // The secret for HCaptcha or Recaptcha. Leave empty for image captcha.
-$config['captcha_language'] = 'en'; // Language for captcha. Documentation links provided in the original comments.
+$config['captcha_type'] = 0; // Options: 0 (Image Captcha), 1 (HCaptcha), 2 (ReCaptcha v2), 3 (Cloudflare Turnstile), or >3 (Disable captcha).
+$config['captcha_key'] = ''; // The site key for HCaptcha, Recaptcha, or Cloudflare Turnstile. Leave empty for image captcha.
+$config['captcha_secret'] = ''; // The secret key for HCaptcha, Recaptcha, or Cloudflare Turnstile. Leave empty for image captcha.
+$config['captcha_language'] = 'en'; // Language for captcha (HCaptcha/ReCaptcha only). Cloudflare Turnstile auto-detects language.
 
 // SOAP Interface for Account Registration - Configure if you prefer to handle account creation through the SOAP interface.
 // You don't need to enable this if you are using the default account creation method or new type of cores.

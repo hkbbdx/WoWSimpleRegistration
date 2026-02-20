@@ -119,4 +119,5 @@ $language['you_already_voted'] = 'Você já votou neste site.';
 $language['captcha_not_valid'] = 'O Captcha não é válido.';
 $language['hcaptcha_not_valid'] = 'O HCaptcha não é válido.';
 $language['recaptcha_not_valid'] = 'O ReCaptcha não é válido.';
+$language['turnstile_not_valid'] = 'Cloudflare Turnstile não é válido.';
 $language['captcha_required'] = 'Captcha é obrigatório.';

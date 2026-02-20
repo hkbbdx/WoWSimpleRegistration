@@ -250,6 +250,34 @@ function validate_recaptcha()
     return false;
 }
 
+function validate_cloudflare_turnstile()
+{
+    if (empty($_POST['cf-turnstile-response'])) {
+        return false;
+    }
+
+    try {
+        $data = array(
+            'secret' => get_config('captcha_secret'),
+            'response' => $_POST['cf-turnstile-response'],
+            'remoteip' => getIP()
+        );
+        $verify = curl_init();
+        curl_setopt($verify, CURLOPT_URL, "https://challenges.cloudflare.com/turnstile/v0/siteverify");
+        curl_setopt($verify, CURLOPT_POST, true);
+        curl_setopt($verify, CURLOPT_POSTFIELDS, http_build_query($data));
+        curl_setopt($verify, CURLOPT_RETURNTRANSFER, true);
+        $response = curl_exec($verify);
+        $responseData = json_decode($response, true);
+        if (isset($responseData["success"]) && $responseData["success"] == true) {
+            return true;
+        }
+    } catch (Exception $e) {
+    }
+
+    return false;
+}
+
 function captcha_validation()
 {
     if (empty(get_config('captcha_type')) && !empty($_POST['captcha']) && !empty($_SESSION['captcha'])) {
@@ -258,7 +286,7 @@ function captcha_validation()
             return false;
         }
         unset($_SESSION['captcha']);
-    } else if (!empty(get_config('captcha_type')) && get_config('captcha_type') > 2) {
+    } else if (!empty(get_config('captcha_type')) && get_config('captcha_type') > 3) {
         return true;
     } elseif (!empty(get_config('captcha_type')) && get_config('captcha_type') == 1 && !empty($_POST['h-captcha-response'])) {
         if (!validate_hcaptcha()) {
@@ -268,6 +296,11 @@ function captcha_validation()
     } elseif (!empty(get_config('captcha_type')) && get_config('captcha_type') == 2 && !empty($_POST['g-recaptcha-response'])) {
         if (!validate_recaptcha()) {
             error_msg(lang('recaptcha_not_valid'));
+            return false;
+        }
+    } elseif (!empty(get_config('captcha_type')) && get_config('captcha_type') == 3 && !empty($_POST['cf-turnstile-response'])) {
+        if (!validate_cloudflare_turnstile()) {
+            error_msg(lang('turnstile_not_valid'));
             return false;
         }
     } else {
@@ -285,6 +318,8 @@ function getCaptchaJS()
             return '<script src="https://hcaptcha.com/1/api.js?hl=' . get_config('captcha_language') . '" async defer></script><style>.h-captcha { display: inline-block;}</style>';
         } else if (get_config('captcha_type') == 2) {
             return '<script src="https://www.google.com/recaptcha/api.js?hl=' . get_config('captcha_language') . '" async defer></script><style>.g-recaptcha { display: inline-block;}</style>';
+        } else if (get_config('captcha_type') == 3) {
+            return '<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script><style>.cf-turnstile { display: inline-block;}</style>';
         }
     }
 
@@ -298,6 +333,8 @@ function GetCaptchaHTML($bootstrap = true)
             return '<div class="row text-center"><div class="col-md-12 text-center"><div class="h-captcha" data-sitekey="' . get_config('captcha_key') . '" style=\'margin:10px auto\'></div></div></div>';
         } else if (get_config('captcha_type') == 2) {
             return '<div class="row text-center"><div class="col-md-12 text-center"><div class="g-recaptcha" data-sitekey="' . get_config('captcha_key') . '" style=\'margin:10px auto\'></div></div></div>';
+        } else if (get_config('captcha_type') == 3) {
+            return '<div class="row text-center"><div class="col-md-12 text-center"><div class="cf-turnstile" data-sitekey="' . get_config('captcha_key') . '" style=\'margin:10px auto\'></div></div></div>';
         } else {
             return '';
         }
