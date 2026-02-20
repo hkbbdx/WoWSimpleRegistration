@@ -108,6 +108,10 @@ Here’s how to enable debug mode:
 
 ## 🗒️ Changelog
 
+### 2.0.4 (2/20/2026)
+
+- Added MMORating.top voting site integration with API verification support. See [mmorating.md](mmorating.md) for setup instructions.
+
 ### 2.0.3 (11/12/2024)
 
 - Support SRP6 versions 1 and 2 used by Modern WoW servers/clients. (Thanks to [funjoker](https://github.com/funjoker))

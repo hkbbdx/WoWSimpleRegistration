@@ -108,8 +108,19 @@ $config['vote_sites'] = array(
     // array(
     //     'image' => 'http://www.xtremeTop100.com/votenew.jpg',
     //     'site_url' => 'http://www.xtremetop100.com/in.php?site=1132364316'
-    // )
+    // ),
+    // MMORating.top - requires API key for vote verification
+    array(
+        'image' => 'https://mmorating.top/images/buttons/mmorating88x31.png',
+        'site_url' => 'https://mmorating.top/',
+        'api_type' => 'mmorating', // Special API type for verification
+        'api_key' => '' // Your API key from mmorating.top (starts with mmr_)
+    )
 );
+
+// MMORating.top API Configuration - Required for vote verification on mmorating.top
+$config['mmorating_api_key'] = ''; // Your API key from mmorating.top (starts with mmr_). Get it from "Мои сервера" -> "API для поощрения за голосование"
+$config['mmorating_api_url'] = 'https://mmorating.top/api/v1/vote/check-flexible'; // API endpoint for vote verification
 
 // Captcha Configuration - Choose the type of captcha to use for security purposes.
 $config['captcha_type'] = 0; // Options: 0 (Image Captcha), 1 (HCaptcha), 2 (ReCaptcha v2), or >2 (Disable captcha).
