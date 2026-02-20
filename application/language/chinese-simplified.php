@@ -118,4 +118,5 @@ $language['you_already_voted'] = '你已经在该站点投过票了。';
 $language['captcha_not_valid'] = '验证码错误。';
 $language['hcaptcha_not_valid'] = '验证码错误。';
 $language['recaptcha_not_valid'] = '验证码错误。';
+$language['turnstile_not_valid'] = 'Cloudflare Turnstile验证码错误。';
 $language['captcha_required'] = '需要验证码。';

@@ -118,4 +118,5 @@ $language['you_already_voted'] = '이미 투표 하셨습니다.';
 $language['captcha_not_valid'] = '보안문자가 틀렸습니다.';
 $language['hcaptcha_not_valid'] = '보안문자가(HCaptcha) 틀렸습니다.';
 $language['recaptcha_not_valid'] = '보안문자가(ReCaptcha) 틀렸습니다.';
+$language['turnstile_not_valid'] = '보안문자가(Cloudflare Turnstile) 틀렸습니다.';
 $language['captcha_required'] = '보안문자가(Captcha) 필요합니다.';
